@@ -13,101 +13,102 @@
         background-color: #ffffff;
       }
       body.dark-mode {
-        background-color: #1c1c1c;
+        background-color: #242223;
       }
     </style>
-    <script>
-      // Ensure the theme is consistent on page load
-      document.addEventListener("DOMContentLoaded", () => {
-        const themeIndicator = document.getElementById("theme-indicator");
-        const body = document.body;
-
-        if (
-          localStorage.getItem("color-theme") === "dark" ||
-          (!localStorage.getItem("color-theme") &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-          body.classList.add("dark-mode");
-          localStorage.setItem("color-theme", "dark");
-          themeIndicator.textContent = "Dark Mode";
-        } else {
-          document.documentElement.classList.remove("dark");
-          body.classList.add("light-mode");
-          localStorage.setItem("color-theme", "light");
-          themeIndicator.textContent = "Light Mode";
-        }
-      });
-
-      // Toggle theme function
-      function toggleTheme() {
-        const html = document.documentElement;
-        const body = document.body;
-
-        if (html.classList.contains("dark")) {
-          html.classList.remove("dark");
-          body.classList.remove("dark-mode");
-          body.classList.add("light-mode");
-          localStorage.setItem("color-theme", "light");
-        } else {
-          html.classList.add("dark");
-          body.classList.remove("light-mode");
-          body.classList.add("dark-mode");
-          localStorage.setItem("color-theme", "dark");
-        }
-      }
-    </script>
   </head>
   <body class="dark-mode">
     <!-- Navigation -->
-    <nav class="bg-black text-white w-full z-20 top-0 border-b border-gray-600">
+    <nav class="bg-transparent text-white w-full z-20 top-0">
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6"
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 border-b border-gray-600"
       >
         <!-- Logo Section -->
         <a href="#" class="text-3xl font-extrabold">HIE.LI</a>
 
-        <!-- Navigation Links -->
-        <ul class="hidden md:flex space-x-8 font-semibold text-sm">
-          <li>
-            <a href="#" class="text-yellow-500 hover:text-yellow-600"
-              >COMPRESSOR</a
-            >
-          </li>
-          <li>
-            <a href="#" class="text-white hover:text-yellow-500">CONVERTER</a>
-          </li>
-          <li>
-            <a href="#" class="text-white hover:text-yellow-500">SHORTENER</a>
-          </li>
-        </ul>
-
-        <!-- Login Button -->
+        <!-- Hamburger Menu Button -->
         <button
           type="button"
-          class="bg-yellow-500 hover:bg-yellow-600 text-black font-medium rounded-lg text-sm px-4 py-2"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+          onclick="document.getElementById('navbar-default').classList.toggle('hidden')"
         >
-          LOGIN
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+            aria-hidden="true"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
         </button>
+
+        <!-- Navigation Links -->
+        <div
+          id="navbar-default"
+          class="hidden w-full md:flex md:items-center md:w-auto"
+        >
+          <ul
+            class="flex flex-col md:flex-row md:space-x-8 md:mt-0 font-semibold text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-yellow-600 hover:text-yellow-500"
+                >COMPRESSOR</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white hover:text-yellow-500"
+                >CONVERTER</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white hover:text-yellow-500"
+                >SHORTENER</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Login Button -->
+        <div>
+          <button
+            type="button"
+            class="bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-full text-sm px-6 py-2"
+          >
+            LOGIN
+          </button>
+        </div>
       </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container mx-auto text-center py-20">
-      <img
-        src="https://flowbite.com/docs/images/logo.svg"
-        alt="Illustration"
-        class="mx-auto mb-6"
-      />
+    <div class="container mx-auto text-center py-16">
+      <img src="/bg_jpg.jpg" alt="Illustration" class="mx-auto mb-6 w-80" />
       <div class="relative w-1/2 mx-auto">
         <input
           type="text"
           placeholder="Paste your link here"
-          class="w-full px-4 py-3 bg-gray-800 text-white placeholder-gray-400 rounded-lg focus:ring focus:ring-yellow-500"
+          class="w-full px-5 py-3 bg-gray-500/10 text-white placeholder-white rounded-full"
         />
+
         <button
           type="button"
-          class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg hover:bg-yellow-600"
+          class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-black font-black px-6 py-1 rounded-full hover:bg-yellow-600"
         >
           CREATE
         </button>
@@ -118,25 +119,52 @@
       </p>
     </div>
 
+    <!-- Brands Section -->
+    <div class="bg-transparent py-10 sm:py-16">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 class="text-center text-xl font-thin text-white opacity-30">
+          The most recognized brands in the world love
+          <span class="font-normal text-white font-bold">hie.li</span>
+        </h2>
+        <div
+          class="mx-auto mt-10 flex items-center justify-between gap-x-8 overflow-hidden"
+        >
+          <img
+            alt="h1bvisa"
+            src="./logos/h1bvisa.png"
+            class="max-h-12 w-auto object-contain opacity-20 hover:opacity-100 transition-opacity duration-300"
+          />
+          <img
+            alt="HireITGlobal"
+            src="./logos/HireITGlobal.png"
+            class="max-h-12 w-auto object-contain opacity-20 hover:opacity-100 transition-opacity duration-300"
+          />
+          <img
+            alt="HIT_Logo"
+            src="./logos/HIT_Logo.png"
+            class="max-h-12 w-auto object-contain opacity-20 hover:opacity-100 transition-opacity duration-300"
+          />
+          <img
+            alt="Immigration"
+            src="./logos/Hotskills_Regular@2x.png"
+            class="max-h-12 w-auto object-contain opacity-20 hover:opacity-100 transition-opacity duration-300"
+          />
+          <img
+            alt="Staffingly"
+            src="./logos/Immigration and Jobs Talk Show.png"
+            class="max-h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-black text-gray-500 py-8">
+    <footer class="bg-black text-gray-500 py-5">
       <div class="container mx-auto text-center">
         <div class="flex flex-wrap justify-center space-x-6 mb-4">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Sponsor 1"
-            class="h-6"
-          />
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Sponsor 2"
-            class="h-6"
-          />
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Sponsor 3"
-            class="h-6"
-          />
+          <img src="./facebook.png" alt="Facebook" class="h-6" />
+          <img src="./facebook-messenger.png" alt="Messenger" class="h-6" />
+          <img src="./telegram.png" alt="Telegram" class="h-6" />
         </div>
         <p class="text-sm text-gray-500">
           Copyright &copy; 2024 hie.li. All rights reserved.
