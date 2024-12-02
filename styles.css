@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #1c1c1c;
+  background-color: #242223;
   color: white;
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 .illustration {
-  width: 200px;
+  width: 400px;
   margin-bottom: 32px;
 }
 
@@ -113,7 +113,7 @@ body {
 
 .create-button {
   position: absolute;
-  right: 10px;
+  right: -25px;
   top: 50%;
   transform: translateY(-50%);
   background-color: white;
@@ -131,7 +131,7 @@ body {
 
 /* Brands Section */
 .brands-section {
-  background-color: #1c1c1c;
+  background-color: #242223;
   padding: 40px 32px;
   text-align: center;
 }
