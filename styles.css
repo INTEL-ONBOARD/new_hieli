@@ -84,16 +84,22 @@ body {
 .main-content {
   text-align: center;
   padding: 80px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .illustration {
   width: 400px;
-  margin-bottom: 32px;
+  margin-bottom: 0px;
 }
 
 .input-container {
   position: relative;
-  max-width: 400px;
+  min-width: 30rem;
   margin: 0 auto;
 }
 
@@ -109,6 +115,13 @@ body {
 
 .input-field::placeholder {
   color: #ccc;
+}
+
+.description {
+  text-align: center;
+  position: relative;
+  max-width: 35rem;
+  margin-left: 2rem;
 }
 
 .create-button {
