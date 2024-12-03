@@ -185,6 +185,9 @@ body {
 }
 
 
+/* Media Queries */
+
+
 /* Tablets */
 
 @media (max-width: 1024px) {
@@ -195,7 +198,7 @@ body {
         width: 70%;
     }
     .input-container {
-        width: 80%;
+        width: 70%;
         max-width: 25rem;
     }
     .description {
@@ -217,8 +220,8 @@ body {
         width: 90%;
     }
     .input-container {
-        width: 95%;
-        max-width: 20rem;
+        width: 85%;
+        max-width: 10rem;
     }
     .description {
         margin: 1rem auto;
@@ -240,11 +243,16 @@ body {
     }
     .input-field {
         font-size: 12px;
-        padding: 10px 14px;
+        padding: 9px 10px;
     }
     .create-button {
         padding: 6px 12px;
         right: -5px;
+    }
+    .description {
+        width: 95%;
+        max-width: 10rem;
+        margin: 1rem auto;
     }
 }
 
