@@ -97,16 +97,125 @@
     </div>
   </div>
 
-  <div class="brands-section">
-    <div class="brands-container">
-      <img src="../assets/logos/hireitglobal.png" alt="Brand 1" class="brand-logo" />
-      <img src="../assets/logos/h1bvisa.png" alt="Brand 2" class="brand-logo" />
-      <img src="../assets/logos/HIT_Logo.png" alt="Brand 3" class="brand-logo" />
-      <img src="../assets/logos/Hotskills_Regular@2x.png" alt="Brand 4" class="brand-logo" />
-      <img src="../assets/logos/Immigration and Jobs Talk Show.png" alt="Brand 5" class="brand-logo" />
-      <img src="../assets/logos/ITPro-logo-final-hq.png" alt="Brand 4" class="brand-logo" />
+<!-- HTML Brands Section with Swiper -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+<div class="brands-section">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="../assets/logos/hireitglobal.png" alt="Brand 1" class="brand-logo" />
+      </div>
+      <div class="swiper-slide">
+        <img src="../assets/logos/h1bvisa.png" alt="Brand 2" class="brand-logo" />
+      </div>
+      <div class="swiper-slide">
+        <img src="../assets/logos/HIT_Logo.png" alt="Brand 3" class="brand-logo" />
+      </div>
+      <div class="swiper-slide">
+        <img src="../assets/logos/Hotskills_Regular@2x.png" alt="Brand 4" class="brand-logo" />
+      </div>
+      <div class="swiper-slide">
+        <img src="../assets/logos/Immigration and Jobs Talk Show.png" alt="Brand 5" class="brand-logo" />
+      </div>
+      <div class="swiper-slide">
+        <img src="../assets/logos/ITPro-logo-final-hq.png" alt="Brand 6" class="brand-logo" />
+      </div>
     </div>
   </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      speed: 1000,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+        1440: {
+          slidesPerView: 5,
+        },
+      },
+    });
+  });
+</script>
+
+<!-- CSS for Brands Section -->
+<style>
+  .brands-section {
+    background-color: #242223;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .swiper-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand-logo {
+    max-height: 48px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+
+  .brand-logo:hover {
+    opacity: 1;
+  }
+
+  /* Responsive Styles for Padding and Logo Size */
+  @media (max-width: 1024px) {
+    .brands-section {
+      padding: 30px 24px;
+    }
+    .brand-logo {
+      max-height: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .brands-section {
+      padding: 20px 16px;
+    }
+    .brand-logo {
+      max-height: 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .brands-section {
+      padding: 16px 12px;
+    }
+    .brand-logo {
+      max-height: 32px;
+    }
+  }
+</style>
 
   <footer class="footer">
     <p class="footer-text">
