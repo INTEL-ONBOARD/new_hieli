@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hielie</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="#" class="navbar-logo">HIE.LI</a>
+                <ul class="navbar-menu">
+                    <li><a href="compressor.html" class="navbar-link active">COMPRESSOR</a></li>
+                    <li><a href="converter.html" class="navbar-link">CONVERTER</a></li>
+                    <li><a href="index.html" class="navbar-link">SHORTENER</a></li>
+                </ul>
+                <button class="login-button" a href="./login.html">LOGIN</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h5>login here</h5>
+    </div>
+
+    <div class="brands-section">
+        <div class="brands-container">
+            <img src="../assets/logos/hireitglobal.png" alt="Brand 1" class="brand-logo" />
+            <img src="../assets/logos/h1bvisa.png" alt="Brand 2" class="brand-logo" />
+            <img src="../assets/logos/HIT_Logo.png" alt="Brand 3" class="brand-logo" />
+            <img src="../assets/logos/Hotskills_Regular@2x.png" alt="Brand 4" class="brand-logo" />
+            <img src="../assets/logos/Immigration and Jobs Talk Show.png" alt="Brand 5" class="brand-logo" />
+            <img src="../assets/logos/ITPro-logo-final-hq.png" alt="Brand 4" class="brand-logo" />
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-text">
+            Copyright &copy; 2024 <a href="#">hie.li</a>. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        const dropBox = document.getElementById("dropBox");
+        const uploadedFile = document.getElementById("uploadedFile");
+        const chooseFileBtn = document.getElementById("chooseFileBtn");
+        const fileInput = document.getElementById("fileInput");
+
+        chooseFileBtn.onclick = () => {
+            fileInput.click();
+        };
+
+        fileInput.addEventListener("change", function (e) {
+            const fileName = e.target.files[0].name;
+
+            let fileContent = `
+        <div class="uploaded-file-info">
+          <h4>Uploaded File: ${fileName}</h4>
+          <button class="btn cancel-btn" id="cancelBtn">Cancel</button>
+        </div>`;
+
+            dropBox.style.display = "none";
+            uploadedFile.innerHTML = fileContent;
+            uploadedFile.style.display = "block";
+
+            const cancelBtn = document.getElementById("cancelBtn");
+            cancelBtn.addEventListener("click", function () {
+                fileInput.value = null;
+                dropBox.style.display = "block";
+                uploadedFile.style.display = "none";
+            });
+        });
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';
+        }
+
+        function selectFormat(format) {
+            document.getElementById('selectedFormat').textContent = format;
+            document.getElementById('dropdownMenu').style.display = 'none';
+        }
+
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('dropdownMenu');
+            const button = document.getElementById('dropdownButton');
+            if (!button.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
