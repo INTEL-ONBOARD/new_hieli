@@ -15,19 +15,28 @@
       <div class="navbar-container">
         <!-- Logo Section -->
         <a href="#" class="navbar-logo">HIE.LI</a>
-
         <!-- Navigation Links -->
         <ul class="navbar-menu">
           <li><a href="compressor.html" class="navbar-link">COMPRESSOR</a></li>
-          <li><a href="converter.html" class="navbar-link active">CONVERTER</a></li>
+          <li><a href="converter.html" class="navbar-link">CONVERTER</a></li>
           <li><a href="index.html" class="navbar-link">SHORTENER</a></li>
         </ul>
 
         <!-- Login Button -->
         <button class="login-button">LOGIN</button>
+                <!-- Hamburger Icon -->
+        <button class="hamburger-icon" onclick="toggleMenu()">
+          &#9776; <!-- Unicode for hamburger icon -->
+        </button>
       </div>
     </div>
   </nav>
+  <script>
+    function toggleMenu() {
+      const navbarMenu = document.querySelector('.navbar-menu');
+      navbarMenu.classList.toggle('show');
+    }
+  </script>
 
   <!-- Main Content -->
   <div class="main-content">
