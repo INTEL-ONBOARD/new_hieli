@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<!-- nav bar-->
+    <!-- nav bar-->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-container">
@@ -23,10 +23,37 @@
             </div>
         </div>
     </nav>
+    <main style="display: flex; flex-direction: column; align-items: center; padding: 50px 20px;">
+        <!-- <a href="#" style="color: #666; text-decoration: none; margin-bottom: 30px;">← Back</a> -->
 
-    <div class="main-content">
-        <h5>login here</h5>
-    </div>
+        <div style="text-align: center; max-width: 400px; width: 100%;">
+            <h1 style="font-size: 32px; color: #fff; margin-bottom: 10px;">Sign in</h1>
+            <p style="color: #888; margin-bottom: 30px;">Log in to continue enjoying our services.</p>
+
+            <form style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="Username or Email"
+                    style="padding: 15px; border-radius: 55px; border: none; background-color: #333; color: white; width: 100%; box-sizing: border-box;">
+
+                <input type="password" placeholder="Password"
+                    style="padding: 15px; border-radius: 55px; border: none; background-color: #333; color: white; width: 100%; box-sizing: border-box;">
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <label style="color: #888;">
+                        <input type="checkbox" style="margin-right: 5px;">
+                        Remember me
+                    </label>
+                    <a href="#" style="color: #888; text-decoration: none;">Forgot Password?</a>
+                </div>
+
+                <button type="submit"
+                    style="padding: 15px; border-radius: 5px; border: none; background: linear-gradient(to right, #333 95%, #ffd700 95%); color: white; cursor: pointer; margin-top: 10px;">login</button>
+
+                <p style="color: #888; text-align: center; margin-top: 20px;">
+                    Don't have an account? <a href="#" style="color: #ffd700; text-decoration: none;">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </main>
 
     <div class="brands-section">
         <div class="brands-container">
