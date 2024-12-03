@@ -32,14 +32,63 @@
   <!-- Main Content -->
   <div class="main-content">
     <img src="../assets/logos/bg_jpg.jpg" alt="Illustration" class="illustration" />
-    <div class="input-container">
-      <input type="text" placeholder="Paste your link here" class="input-field" />
-      <button class="create-button">CREATE</button>
+
+    <!-- <div class="container-upload">
+      <div class="card">
+        <h3>Convert your files instantly</h3>
+        <div class="drop_box" id="dropBox">
+          <header>
+            <h4>Select File here</h4>
+          </header>
+          <p>Files Supported: PDF, TEXT, DOC, DOCX</p>
+          <input type="file" hidden accept=".doc,.docx,.pdf" id="fileInput" />
+          <button class="btn" id="chooseFileBtn">Choose File</button>
+        </div>
+        <div class="uploaded-file" id="uploadedFile" style="display:none;">
+        </div>
+      </div>
+    </div> -->
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <!-- Dropdown and Upload -->
+      <div
+        style="display: flex; align-items: center; background-color: #2a2a2a; border-radius: 10px; padding: 10px 20px; gap: 10px; width: 300px; justify-content: space-between; position: relative;">
+        <div style="position: relative; flex: 1;">
+          <button id="dropdownButton" onclick="toggleDropdown()"
+            style="background: none; border: none; color: white; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 100%; height: 40px; position: relative; border-radius: 10px; background-color: #2a2a2a; cursor: pointer;">
+            <span id="selectedFormat">FILE TYPE</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              style="width: 30px; height: 30px; fill: white; position: absolute; right: 10px;">
+              <path d="M12 16.5l-6-6h12l-6 6z" />
+            </svg>
+
+          </button>
+          <div id="dropdownMenu"
+            style="display: none; position: absolute; top: 100%; left: 0; background-color: #2a2a2a; border-radius: 5px; margin-top: 5px; overflow: hidden; z-index: 10; width: 100%;">
+            <div onclick="selectFormat('PDF')"
+              style="padding: 10px; color: white; font-family: Arial, sans-serif; font-size: 14px; cursor: pointer; border-bottom: 1px solid #1c1c1c; text-align: center;">
+              PDF</div>
+            <div onclick="selectFormat('DOCX')"
+              style="padding: 10px; color: white; font-family: Arial, sans-serif; font-size: 14px; cursor: pointer; border-bottom: 1px solid #1c1c1c; text-align: center;">
+              DOCX</div>
+            <div onclick="selectFormat('JPEG')"
+              style="padding: 10px; color: white; font-family: Arial, sans-serif; font-size: 14px; cursor: pointer; text-align: center;">
+              JPEG</div>
+          </div>
+        </div>
+        <button
+          style="background-color: #d1d1d1; color: black; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;"
+          onmouseover="this.style.backgroundColor='#b1b1b1';" onmouseout="this.style.backgroundColor='#d1d1d1';">
+          UPLOAD
+        </button>
+      </div>
+      <!-- Convert Button -->
+      <button
+        style="background-color: #f0a500; color: black; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; padding: 15px 80px; border: none; border-radius: 10px; cursor: pointer;"
+        onmouseover="this.style.backgroundColor='#d49000';" onmouseout="this.style.backgroundColor='#f0a500';">
+        CONVERT
+      </button>
     </div>
-    <p class="description">
-      Lorem ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem ipsum has been the industry's standard dummy text.
-    </p>
   </div>
 
   <!-- Brands Section -->
@@ -60,6 +109,62 @@
       Copyright &copy; 2024 <a href="#">hie.li</a>. All rights reserved.
     </p>
   </footer>
+
+  <script>
+    const dropBox = document.getElementById("dropBox");
+    const uploadedFile = document.getElementById("uploadedFile");
+    const chooseFileBtn = document.getElementById("chooseFileBtn");
+    const fileInput = document.getElementById("fileInput");
+
+    chooseFileBtn.onclick = () => {
+      fileInput.click();
+    };
+
+    fileInput.addEventListener("change", function (e) {
+      const fileName = e.target.files[0].name;
+
+      // Create the uploaded file view
+      let fileContent = `
+        <div class="uploaded-file-info">
+          <h4>Uploaded File: ${fileName}</h4>
+          <button class="btn cancel-btn" id="cancelBtn">Cancel</button>
+        </div>`;
+
+      // Hide the upload section and show the uploaded file section
+      dropBox.style.display = "none";
+      uploadedFile.innerHTML = fileContent;
+      uploadedFile.style.display = "block";
+
+      // Add event listener to the cancel button to revert back
+      const cancelBtn = document.getElementById("cancelBtn");
+      cancelBtn.addEventListener("click", function () {
+        // Clear the file input and revert back to the initial state
+        fileInput.value = null;
+        dropBox.style.display = "block";
+        uploadedFile.style.display = "none";
+      });
+    });
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdownMenu');
+      dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';
+    }
+
+    function selectFormat(format) {
+      document.getElementById('selectedFormat').textContent = format;
+      document.getElementById('dropdownMenu').style.display = 'none';
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+      const dropdown = document.getElementById('dropdownMenu');
+      const button = document.getElementById('dropdownButton');
+      if (!button.contains(event.target)) {
+        dropdown.style.display = 'none';
+      }
+    });
+  </script>
+
 </body>
 
 </html>
