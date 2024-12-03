@@ -6,28 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hielie</title>
   <link rel="stylesheet" href="../css/styles.css" />
+  <!-- <link rel="js" href="../js/main.js"/>-->
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
+<!-- Navigation -->
+<nav class="navbar">
     <div class="container">
-      <div class="navbar-container">
-        <!-- Logo Section -->
-        <a href="#" class="navbar-logo">HIE.LI</a>
+        <div class="navbar-container">
+            <!-- Logo Section -->
+            <a href="#" class="navbar-logo">HIE.LI</a>
 
-        <!-- Navigation Links -->
-        <ul class="navbar-menu">
-          <li><a href="compressor.html" class="navbar-link ">COMPRESSOR</a></li>
-          <li><a href="converter.html" class="navbar-link">CONVERTER</a></li>
-          <li><a href="index.html" class="navbar-link active">SHORTENER</a></li>
-        </ul>
+            <!-- Hamburger Icon -->
+            <button class="hamburger-icon" onclick="toggleMenu()">
+                &#9776; <!-- Unicode for hamburger icon -->
+            </button>
 
-        <!-- Login Button -->
-        <button class="login-button">LOGIN</button>
-      </div>
+            <!-- Navigation Links -->
+            <ul class="navbar-menu">
+                <li><a href="compressor.html" class="navbar-link">COMPRESSOR</a></li>
+                <li><a href="converter.html" class="navbar-link">CONVERTER</a></li>
+                <li><a href="index.html" class="navbar-link">SHORTENER</a></li>
+            </ul>
+
+            <!-- Login Button -->
+            <button class="login-button">LOGIN</button>
+        </div>
     </div>
-  </nav>
+</nav>
+<script>
+    function toggleMenu() {
+        const navbarMenu = document.querySelector('.navbar-menu');
+        navbarMenu.classList.toggle('show');
+    }
+</script>
+
 
   <!-- Main Content -->
   <div class="main-content">
@@ -61,5 +74,4 @@
     </p>
   </footer>
 </body>
-
 </html>

@@ -76,6 +76,7 @@ body {
     cursor: pointer;
     text-align: center;
     cursor: pointer;
+    order: 2;
 }
 
 .login-button:hover {
@@ -83,41 +84,42 @@ body {
 }
 
 
-/* Navbar Media Queries */
+/* Hamburger Icon */
 
-
-/* Tablets */
-
-@media (max-width: 1024px) {
-    .navbar-menu {
-        display: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
+.hamburger-icon {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-left: 16px;
+    /* Ensure proper alignment after login button */
+    order: 1;
 }
 
 
-/* Mobile */
+/* Media Queries for Responsiveness */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .navbar-menu {
         display: none;
+        flex-direction: column;
+        background-color: #333;
+        border-radius: 8px;
+        padding: 16px;
+        width: 200px;
+        margin-top: 16px;
+        /* Ensure it appears after the login button */
     }
-    .navbar-toggle {
+    .navbar-menu.show {
+        display: flex;
+    }
+    .hamburger-icon {
         display: block;
     }
-}
-
-
-/* Small Mobile */
-
-@media (max-width: 480px) {
-    .navbar-menu {
-        display: none;
-    }
-    .navbar-toggle {
-        display: block;
+    .login-button {
+        margin-top: 16px;
     }
 }
 
@@ -190,7 +192,7 @@ body {
 
 /* Tablets */
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .main-content {
         padding: 60px 24px;
     }
