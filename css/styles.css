@@ -198,7 +198,7 @@ body {
         width: 70%;
     }
     .input-container {
-        width: 70%;
+        width: 80%;
         max-width: 25rem;
     }
     .description {
@@ -220,8 +220,8 @@ body {
         width: 90%;
     }
     .input-container {
-        width: 85%;
-        max-width: 10rem;
+        width: 95%;
+        max-width: 20rem;
     }
     .description {
         margin: 1rem auto;
@@ -243,16 +243,11 @@ body {
     }
     .input-field {
         font-size: 12px;
-        padding: 9px 10px;
+        padding: 10px 14px;
     }
     .create-button {
         padding: 6px 12px;
         right: -5px;
-    }
-    .description {
-        width: 95%;
-        max-width: 10rem;
-        margin: 1rem auto;
     }
 }
 
@@ -390,4 +385,77 @@ body {
     .footer-text {
         font-size: 11px;
     }
+}
+
+.container-upload {}
+
+.card {
+    border-radius: 10px;
+    width: 400px;
+    height: 210px;
+    padding: 1s0px 30px 40px;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.drop_box {
+    margin: 0px 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px dotted #a3a3a3;
+    border-radius: 5px;
+}
+
+.drop_box h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #7e7e7e;
+    padding: 0px;
+    margin: 10px;
+}
+
+.drop_box p {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #a3a3a3;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000e6;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    text-decoration: none;
+    background-color: #ffffff35;
+    color: #f0b000;
+    padding: 10px 20px;
+    border: none;
+    outline: transparent;
+    cursor: pointer;
+}
+
+.form input {
+    margin: 10px 0;
+    width: 100%;
+    background-color: #e2e2e2;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 4px;
 }
