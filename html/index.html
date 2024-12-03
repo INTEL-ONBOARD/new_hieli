@@ -10,48 +10,51 @@
 </head>
 
 <body>
-<!-- Navigation -->
-<nav class="navbar">
+  <!-- Navigation -->
+  <nav class="navbar">
     <div class="container">
-        <div class="navbar-container">
-            <!-- Logo Section -->
-            <a href="#" class="navbar-logo">HIE.LI</a>
+      <div class="navbar-container">
+        <!-- Logo Section -->
+        <a href="#" class="navbar-logo">HIE.LI</a>
 
-            <!-- Hamburger Icon -->
-            <button class="hamburger-icon" onclick="toggleMenu()">
-                &#9776; <!-- Unicode for hamburger icon -->
-            </button>
+        <!-- Hamburger Icon -->
+        <button class="hamburger-icon" onclick="toggleMenu()">
+          &#9776; <!-- Unicode for hamburger icon -->
+        </button>
 
-            <!-- Navigation Links -->
-            <ul class="navbar-menu">
-                <li><a href="compressor.html" class="navbar-link">COMPRESSOR</a></li>
-                <li><a href="converter.html" class="navbar-link">CONVERTER</a></li>
-                <li><a href="index.html" class="navbar-link">SHORTENER</a></li>
-            </ul>
+        <!-- Navigation Links -->
+        <ul class="navbar-menu">
+          <li><a href="compressor.html" class="navbar-link">COMPRESSOR</a></li>
+          <li><a href="converter.html" class="navbar-link">CONVERTER</a></li>
+          <li><a href="index.html" class="navbar-link">SHORTENER</a></li>
+        </ul>
 
-            <!-- Login Button -->
-            <button class="login-button">LOGIN</button>
-        </div>
+        <!-- Login Button -->
+        <button class="login-button">LOGIN</button>
+      </div>
     </div>
-</nav>
-<script>
+  </nav>
+  <script>
     function toggleMenu() {
-        const navbarMenu = document.querySelector('.navbar-menu');
-        navbarMenu.classList.toggle('show');
+      const navbarMenu = document.querySelector('.navbar-menu');
+      navbarMenu.classList.toggle('show');
     }
-</script>
+  </script>
 
 
   <!-- Main Content -->
   <div class="main-content">
     <img src="../assets/logos/bg_jpg.jpg" alt="Illustration" class="illustration" />
+    <h1>Convert <span class="underlined underline-clip">file</span><br>with<span class="underlined underline-mask">
+        Ease</span><br></h1>
+
     <div class="input-container">
       <input type="text" placeholder="Paste your link here" class="input-field" />
       <button class="create-button">CREATE</button>
     </div>
-    <p class="description">
-      Lorem ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem ipsum has been the industry's standard dummy text.
+    <p class="description" style="color:#8c8c8c70; ">
+      Have a link that's too long or complicated? Use our link shortener to create clean, concise URLs that are easy to
+      share and remember. Perfect for sharing links via social media, emails, or text
     </p>
   </div>
 
@@ -74,4 +77,5 @@
     </p>
   </footer>
 </body>
+
 </html>

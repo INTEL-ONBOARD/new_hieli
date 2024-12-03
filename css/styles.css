@@ -484,7 +484,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 50%;
-  border: 6px solid hsl(280 80% 50%);
+  border: 6px solid hsl(37, 80%, 50%);
   /* Use a conic gradient mask to hide and show the bits you want */
   --spread: 140deg;
   --start: 290deg;
@@ -520,7 +520,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 50%;
-  border: 6px solid hsl(130 80% 50%);
+  border: 6px solid hsl(52, 80%, 50%);
   /* Use a clip-path to hide and show the bits you want */
   clip-path: polygon(0 0, 50% 50%, 100% 0);
 }
