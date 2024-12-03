@@ -534,6 +534,10 @@ h1 {
         order: 1;
     }
 
+    .login-button a {
+        text-decoration: none;
+    }
+
     .mobile-nav-active .navbar-menu {
         display: block;
     }
